@@ -9,42 +9,76 @@ import Produtos from "../../Functions/Produtos";
 export default function Card(props) {
     const Card = styled.div`
 
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
 
-
-    .price{
-            font-size: 12pt;
-        }
-    .title{
-        font-size: 18pt;
-        font-family: 'Urbanist', sans-serif;
-
-    }
-        .content,.img{
-            
+   
+    .content{
+        z-index: 1;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
         justify-content: center;
-        width: 20vw;
-        height: 80%;
         transition: all .2s;
-        img{
+           
+            img{
+                    width: 100%;
+                    border-radius: 10px 10px 0 0;
+                    transition: all .2s;
+
+
+                }
+                
+        
+    }
+    .info{  
+                z-index: 2;
+                margin-top: 50px;
+
                 width: 100%;
-                border-radius: 10px;
-                transition: all .2s;
+                
+                border-radius: 0 0 20px 20px;
+                .price{
+                    font-size: 12pt;
+                    color: ${Assets.White};
+                    visibility: hidden;
+                    margin-top: 8px;
+                }
+                .title{
+                    visibility: hidden;
+                    margin-top: 8px;
+                    color: ${Assets.White};
+                    font-size: 18pt;
+                    font-family: 'Urbanist', sans-serif;
 
-
-            }
-            :hover{
-                cursor: pointer;
-                img{
-                    width: 90%;
                 }
             }
-        } 
-        
-           
+
+            :hover{
+                    transition:all .2s ;
+                    border: 2px solid purple;
+                    border-radius: 20px  ;
+                    padding-top: 30px;
+                    .title, .price{
+                        
+                        visibility: visible;
+
+                    }
+                    .info{
+                        border: solid 5px ${Assets.Purple};
+                        margin-top: -20px;
+                        background-color: ${Assets.Purple};
+                        height: 70px;
+                    }
+                    img{
+                        margin-top: -20px;
+                        border-radius: 10px ;
+                        width: 95%;
+
+                    }
+                }
         
             
               
@@ -57,11 +91,14 @@ export default function Card(props) {
        
            <div className="content">
                 <div className="img">
-                        <img src={props.img} alt="" />
+                        <img src={(props.produto).img} alt="" />
                 </div>
-                <div className="title">{props.nome}</div>
-                <div className="price ">{props.preco}</div>
+                
            </div>
+           <div className="info">
+                <div className="title">{(props.produto).nome}</div>
+                <div className="price ">{(props.produto).preco}</div>
+            </div>
         </Card>
 
     )

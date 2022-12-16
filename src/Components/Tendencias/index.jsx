@@ -12,10 +12,9 @@ import
 
 function Tendencias(props) {
     const Tendencias = styled.div`
-        margin-top: 55px;
         color: ${Assets.White};
-        width: 100vw;
-        height: auto;
+        width: 90vw;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -23,8 +22,8 @@ function Tendencias(props) {
         justify-content: center;
 
         .tendencias{
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             text-align: center;
             align-items: center;
             justify-content: center;
@@ -35,7 +34,7 @@ function Tendencias(props) {
                 align-items: center;
                 justify-content: center;
                 display: flex;
-                width: 60vw;
+                width: 10vw;
             }
            
            
@@ -65,20 +64,16 @@ function Tendencias(props) {
                 <div className="tendencias">
                    <div className="text">Tendencias</div>
                    <div className="card">
-                   <Components.Card img={Produtos.produto1.img} />
-                   <Components.Card img={Produtos.produto2.img} />
-                   <Components.Card img={Produtos.produto3.img} />
-                   <Components.Card img={Produtos.produto4.img} />
-                 {/*   <Components.Card img={Produtos.produto5.img} nome={Produtos.produto5.nome} preco={Produtos.produto5.preco} />
-                   <Components.Card img={Produtos.produto6.img} nome={Produtos.produto6.nome} preco={Produtos.produto6.preco} />
-                   <Components.Card img={Produtos.produto7.img} nome={Produtos.produto7.nome} preco={Produtos.produto7.preco} />
-                   <Components.Card img={Produtos.produto8.img} nome={Produtos.produto8.nome} preco={Produtos.produto8.preco} />
-                  */}             
+                   <Components.Card produto={Produtos.produto9} />
+                   <Components.Card produto={Produtos.produto7} />
+                   <Components.Card produto={Produtos.produto6} />
+                   <Components.Card produto={Produtos.produto5} />
+                     
                       
 
                    </div> 
-                   <div className="btn"><Components.Btn  name="Ver mais" /></div>
-                </div>
+{/*                    <div className="btn"><Components.Btn  name="Ver mais" /></div>
+ */}                </div>
         </Tendencias>
     )
 }

@@ -8,18 +8,22 @@ import slide from '../../Assets/slide';
 
 export default function Slide(props) {
     const Slide = styled.div`
-        margin-top: 25px;
-        width: 50vw;
-        height: 80vh;
+        max-width: 100vw;
+        min-width: 40%;
+        height: 60vh;
+        min-height: 40vh;
         background: linear-gradient(to bottom, #00000057 0%, #0000008f 0 80%, #000 100%),url(${slide.one});
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
-        display: flex;
         text-align: center;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        display: flex;
+        justify-content: start;
+
 
             .title{
+                flex: 1;
+                margin-top: 100px;
                 color: ${Assets.White};
                 font-family: 'Urbanist', sans-serif;
                 font-size: 18pt;
@@ -28,7 +32,7 @@ export default function Slide(props) {
                 text-align: center;
                 align-items: center;
                 justify-content: center;
-               
+                width: 100%;
             }
 `;
     return(
@@ -36,7 +40,7 @@ export default function Slide(props) {
 
             <div className="title">
             O papel da lingerie é de ressaltar as belezas do seu corpo
-                <Components.Btn name='Veja mais' />
+                <Components.Btn width="40" name='Veja mais' />
             </div>
             
         </Slide>

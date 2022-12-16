@@ -8,15 +8,17 @@ import  Colors  from "../../Assets";
 
 export default function HomeP(props) {
     const HomeP = styled.div`
-        width: 100vw;
+        max-width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
         justify-content: center;
-    
+       
+      
     `
+
   
         
 
@@ -25,9 +27,10 @@ export default function HomeP(props) {
        
         <HomeP>
         <Components.Header />
-        <Components.Slide />
+        <Components.Slide/>
         <Components.Tendencias />
-            
+{/*         <Components.Footer />
+ */}            
         </HomeP>
         
     )

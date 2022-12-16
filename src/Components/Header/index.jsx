@@ -25,7 +25,7 @@ export default function Header(props) {
 
     }
      a {
-            font-size: 14pt;
+            font-size: 12pt;
             color: #FFF;
             transition: all .2s;
             
@@ -36,10 +36,15 @@ export default function Header(props) {
             }
         }
 
-        .logo{
-                width: 10vw;
+        .logo{  
+                z-index: 2;
+                width: 8vw;
                 img{
                     width: 100%;
+                    transition: all .2s;
+                    :hover{
+                        width: 110%;
+                    }
                 }
             }
 
@@ -50,13 +55,7 @@ export default function Header(props) {
         
     return(
         <Header>
-            <nav>
-            <li className="item logo">
-                    <Link to='/'>
-                         <img src={Assets.logo} alt="" />
-                    </Link>
-                </li>
-            </nav>
+           
             <nav className="menu">
                
                 <li className="item text">
@@ -69,6 +68,16 @@ export default function Header(props) {
                          Lingerie
                     </Link>
                 </li>
+
+                <nav>
+                    <li className="item logo">
+                        <Link to='/'>
+                            <img src={Assets.logo} alt="" />
+                        </Link>
+                    </li>
+                </nav>
+
+
                 <li className="item text">
                     <Link to='/sexshop'>
                          Sex shop
